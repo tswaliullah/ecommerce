@@ -14,7 +14,7 @@ func Logger(next http.Handler) http.Handler {
 			next.ServeHTTP(w, r)
 
 			diff := time.Since(start)
-
+//   log the method, path, and time taken to process the request
 			log.Println(r.Method, r.URL.Path, diff)
 		})
 }
